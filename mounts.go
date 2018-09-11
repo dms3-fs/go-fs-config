@@ -2,7 +2,7 @@ package config
 
 // Mounts stores the (string) mount points
 type Mounts struct {
-	IPFS           string
-	IPNS           string
+	DMS3FS         string
+	DMS3NS         string
 	FuseAllowOther bool
 }

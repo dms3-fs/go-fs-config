@@ -1,10 +1,10 @@
 {
   "author": "magik6k",
   "bugs": {
-    "url": "https://github.com/ipfs/go-ipfs-config"
+    "url": "https://github.com/dms3-fs/go-fs-config"
   },
   "gx": {
-    "dvcsimport": "github.com/ipfs/go-ipfs-config"
+    "dvcsimport": "github.com/dms3-fs/go-fs-config"
   },
   "gxDependencies": [
     {
@@ -57,4 +57,3 @@
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
   "version": "0.2.5"
 }
-

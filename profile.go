@@ -10,7 +10,7 @@ type Profile struct {
 	// Description briefly describes the functionality of the profile
 	Description string
 
-	// Transform takes ipfs configuration and applies the profile to it
+	// Transform takes dms3fs configuration and applies the profile to it
 	Transform Transformer
 }
 
@@ -38,7 +38,7 @@ var defaultServerFilters = []string{
 var Profiles = map[string]Profile{
 	"server": {
 		Description: `Disables local host discovery, recommended when
-running IPFS on machines with public IPv4 addresses.`,
+running DMS3FS on machines with public IPv4 addresses.`,
 
 		Transform: func(c *Config) error {
 			c.Addresses.NoAnnounce = appendSingle(c.Addresses.NoAnnounce, defaultServerFilters)
@@ -62,7 +62,7 @@ profile, enables discovery in local networks.`,
 		},
 	},
 	"test": {
-		Description: `Reduces external interference of IPFS daemon, this
+		Description: `Reduces external interference of DMS3FS daemon, this
 is useful when using the daemon in test environments.`,
 
 		Transform: func(c *Config) error {
@@ -101,14 +101,14 @@ Inverse profile of the test profile.`,
 		Description: `Replaces default datastore configuration with experimental
 badger datastore.
 
-If you apply this profile after ipfs init, you will need
+If you apply this profile after dms3fs init, you will need
 to convert your datastore to the new configuration.
-You can do this using ipfs-ds-convert.
+You can do this using dms3fs-ds-convert.
 
-For more on ipfs-ds-convert see
-$ ipfs-ds-convert --help
+For more on dms3fs-ds-convert see
+$ dms3fs-ds-convert --help
 and
-$ ipfs-ds-convert convert --help
+$ dms3fs-ds-convert convert --help
 
 WARNING: badger datastore is experimental.
 Make sure to backup your data frequently.`,
@@ -129,14 +129,14 @@ Make sure to backup your data frequently.`,
 	"default-datastore": {
 		Description: `Restores default datastore configuration.
 
-If you apply this profile after ipfs init, you will need
+If you apply this profile after dms3fs init, you will need
 to convert your datastore to the new configuration.
-You can do this using ipfs-ds-convert.
+You can do this using dms3fs-ds-convert.
 
-For more on ipfs-ds-convert see
-$ ipfs-ds-convert --help
+For more on dms3fs-ds-convert see
+$ dms3fs-ds-convert --help
 and
-$ ipfs-ds-convert convert --help
+$ dms3fs-ds-convert convert --help
 `,
 
 		Transform: func(c *Config) error {

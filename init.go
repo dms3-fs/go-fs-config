@@ -7,8 +7,8 @@ import (
 	"io"
 	"time"
 
-	ci "github.com/libp2p/go-libp2p-crypto"
-	peer "github.com/libp2p/go-libp2p-peer"
+	ci "github.com/dms3-p2p/go-p2p-crypto"
+	peer "github.com/dms3-p2p/go-p2p-peer"
 )
 
 func Init(out io.Writer, nBitsForKeypair int) (*Config, error) {
@@ -49,11 +49,11 @@ func Init(out io.Writer, nBitsForKeypair int) (*Config, error) {
 
 		// setup the node mount points.
 		Mounts: Mounts{
-			IPFS: "/ipfs",
-			IPNS: "/ipns",
+			DMS3FS: "/dms3fs",
+			DMS3NS: "/dms3ns",
 		},
 
-		Ipns: Ipns{
+		Dms3Ns: Dms3Ns{
 			ResolveCacheSize: 128,
 		},
 
@@ -99,18 +99,19 @@ const DefaultConnMgrGracePeriod = time.Second * 20
 func addressesConfig() Addresses {
 	return Addresses{
 		Swarm: []string{
-			"/ip4/0.0.0.0/tcp/4001",
-			// "/ip4/0.0.0.0/udp/4002/utp", // disabled for now.
-			"/ip6/::/tcp/4001",
+			"/ip4/0.0.0.0/tcp/4101",
+			// "/ip4/0.0.0.0/udp/4102/utp", // disabled for now.
+			"/ip6/::/tcp/4101",
 		},
 		Announce:   []string{},
 		NoAnnounce: []string{},
-		API:        "/ip4/127.0.0.1/tcp/5001",
-		Gateway:    "/ip4/127.0.0.1/tcp/8080",
+		API:        "/ip4/127.0.0.1/tcp/5101",
+		Gateway:    "/ip4/127.0.0.1/tcp/8180",
 	}
 }
 
 // DefaultDatastoreConfig is an internal function exported to aid in testing.
+// TODO: define datastore structure
 func DefaultDatastoreConfig() Datastore {
 	return Datastore{
 		StorageMax:         "10GB",

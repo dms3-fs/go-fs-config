@@ -1,4 +1,4 @@
-// package config implements the ipfs config file datastructures and utilities.
+// package config implements the dms3fs config file datastructures and utilities.
 package config
 
 import (
@@ -12,7 +12,7 @@ import (
 	"github.com/mitchellh/go-homedir"
 )
 
-// Config is used to load ipfs config files.
+// Config is used to load dms3fs config files.
 type Config struct {
 	Identity  Identity  // local node's peer identity
 	Datastore Datastore // local node's storage
@@ -20,7 +20,7 @@ type Config struct {
 	Mounts    Mounts    // local node's mount points
 	Discovery Discovery // local node's discovery mechanisms
 	Routing   Routing   // local node's routing settings
-	Ipns      Ipns      // Ipns settings
+	Dms3Ns    Dms3Ns    // Dms3Ns settings
 	Bootstrap []string  // local nodes's bootstrap peer addresses
 	Gateway   Gateway   // local node's gateway server options
 	API       API       // local node's API settings
@@ -33,13 +33,13 @@ type Config struct {
 
 const (
 	// DefaultPathName is the default config dir name
-	DefaultPathName = ".ipfs"
+	DefaultPathName = ".dms3-fs"
 	// DefaultPathRoot is the path to the default config dir location.
 	DefaultPathRoot = "~/" + DefaultPathName
 	// DefaultConfigFile is the filename of the configuration file
 	DefaultConfigFile = "config"
 	// EnvDir is the environment variable used to change the path root.
-	EnvDir = "IPFS_PATH"
+	EnvDir = "DMS3FS_PATH"
 )
 
 // PathRoot returns the default configuration root directory

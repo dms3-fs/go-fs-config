@@ -8,10 +8,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ipfs/go-ipfs-config"
+	"github.com/dms3-fs/go-fs-config"
 
 	"github.com/facebookgo/atomicfile"
-	"github.com/ipfs/go-ipfs-util"
+	"github.com/dms3-fs/go-fs-util"
 )
 
 // ReadConfigFile reads the config from `filename` into `cfg`.
@@ -56,9 +56,9 @@ func encode(w io.Writer, value interface{}) error {
 
 // Load reads given file and returns the read config, or error.
 func Load(filename string) (*config.Config, error) {
-	// if nothing is there, fail. User must run 'ipfs init'
+	// if nothing is there, fail. User must run 'dms3fs init'
 	if !util.FileExists(filename) {
-		return nil, errors.New("ipfs not initialized, please run 'ipfs init'")
+		return nil, errors.New("dms3fs not initialized, please run 'dms3fs init'")
 	}
 
 	var cfg config.Config

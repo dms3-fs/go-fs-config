@@ -10,7 +10,7 @@ type SwarmConfig struct {
 	ConnMgr ConnMgr
 }
 
-// ConnMgr defines configuration options for the libp2p connection manager
+// ConnMgr defines configuration options for the dms3-p2p connection manager
 type ConnMgr struct {
 	Type        string
 	LowWater    int

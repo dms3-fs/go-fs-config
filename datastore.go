@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 )
 
-// DefaultDataStoreDirectory is the directory to store all the local IPFS data.
+// DefaultDataStoreDirectory is the directory to store all the local DMS3FS data.
 const DefaultDataStoreDirectory = "datastore"
 
 // Datastore tracks the configuration of the datastore.

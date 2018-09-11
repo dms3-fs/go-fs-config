@@ -1,6 +1,6 @@
 package config
 
-type Ipns struct {
+type Dms3Ns struct {
 	RepublishPeriod string
 	RecordLifetime  string
 

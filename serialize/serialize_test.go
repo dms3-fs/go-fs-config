@@ -5,11 +5,11 @@ import (
 	"runtime"
 	"testing"
 
-	config "github.com/ipfs/go-ipfs-config"
+	config "github.com/dms3-fs/go-fs-config"
 )
 
 func TestConfig(t *testing.T) {
-	const filename = ".ipfsconfig"
+	const filename = ".dms3fsconfig"
 	cfgWritten := new(config.Config)
 	cfgWritten.Identity.PeerID = "faketest"
 
